@@ -1,6 +1,6 @@
 <template>
     <div>
-      About
+      <marquee>Lennox is the greatest</marquee>
     </div>
 </template>
   
