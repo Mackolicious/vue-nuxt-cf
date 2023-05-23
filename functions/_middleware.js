@@ -1,10 +1,10 @@
 
+export async function onRequest(context) {
+    console.log('Lennox secret', context.env.LENNOX_SECRET)
 
-const middleware = ({ request, env, next }) => {
-    console.log('Lennox secret', env.LENNOX_SECRET)
-    return next()
+    try {
+        return await context.next();
+    } catch (err) {
+        return new Response(`${err.message}\n${err.stack}`, { status: 500 });
+    }
 }
-
-
-
-export const onRequest = [middleware]
